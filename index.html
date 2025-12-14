@@ -1,195 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <title>Pritish Ranjan Barik | Data Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pritish Ranjan Barik | Resume</title>
 
+    <!-- Fonts -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icons -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
+
+    <!-- Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
     <style>
-      body {
-        font-size: 0.95rem;
+      :root {
+        --bg: #0b0f19;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #e6e6eb;
+        --muted: #9aa0b5;
+        --accent: #00ffd5;
+        --accent2: #7c7cff;
+        --glow: 0 0 30px rgba(0, 255, 213, 0.15);
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "JetBrains Mono", monospace;
+        background: radial-gradient(circle at top, #121a2f, #05070d);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* Animated background */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          transparent 30%,
+          rgba(124, 124, 255, 0.08),
+          transparent 70%
+        );
+        animation: scan 8s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes scan {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+
       a {
-        color: black;
+        color: var(--accent);
         text-decoration: none;
       }
+
       a:hover {
-        color: #005786;
+        color: var(--accent2);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 20px 80px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        margin-bottom: 24px;
+        box-shadow: var(--glow);
+        backdrop-filter: blur(12px);
+      }
+
+      .header h1 {
+        font-size: 2.6rem;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      .header span {
+        color: var(--muted);
+      }
+
+      .subtitle {
+        margin-top: 6px;
+        color: var(--accent);
+      }
+
+      .contacts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        border-left: 4px solid var(--accent);
+        padding-left: 12px;
+        color: var(--accent);
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .job {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .job h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .job span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .skills span {
+        display: inline-block;
+        padding: 6px 10px;
+        margin: 6px;
+        border-radius: 999px;
+        background: rgba(0, 255, 213, 0.1);
+        border: 1px solid rgba(0, 255, 213, 0.3);
+        font-size: 0.85rem;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        margin-top: 60px;
+        font-size: 0.8rem;
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 213, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 18px rgba(0, 255, 213, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 213, 0);
+        }
       }
     </style>
   </head>
 
-  <body class="container">
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <div class="card header pulse" data-aos="fade-down">
+        <h1>Pritish Ranjan <span>Barik</span></h1>
+        <div class="subtitle">
+          Data Engineer | Azure | PySpark | Distributed Systems
+        </div>
 
-    <!-- Header Card -->
-    <div class="card mt-2 mb-2">
-      <div class="card-header bg-white">
-        <h1 class="mb-0">
-          <span class="text-black">Pritish Ranjan</span>
-          <span class="text-muted">Barik</span>
-        </h1>
-        <small>
-          <a href="https://resume.pritishranjan.com" target="_blank">
-            https://resume.pritishranjan.com
-          </a>
-        </small>
-      </div>
-
-      <!-- Contact -->
-      <div class="card-body bg-white">
-        <div class="row">
-          <div class="col-md-3">
-            <i class="bi bi-envelope-at-fill"></i>
-            <a href="mailto:pritishrn@outlook.com">pritishrn@outlook.com</a>
-          </div>
-          <div class="col-md-3">
-            <i class="bi bi-linkedin"></i>
-            <a href="https://www.linkedin.com/in/pritishranjan/" target="_blank">
-              LinkedIn
-            </a>
-          </div>
-          <div class="col-md-3">
-            <i class="bi bi-phone-fill"></i>
-            +91-86582-37645
-          </div>
-          <div class="col-md-3">
+        <div class="contacts">
+          <div><i class="bi bi-envelope"></i> pritishrn@outlook.com</div>
+          <div><i class="bi bi-phone"></i> +91-86582-3****</div>
+          <div>
             <i class="bi bi-github"></i>
-            <a href="https://github.com/PreetRanjan" target="_blank">
-              GitHub
-            </a>
+            <a href="https://github.com/PreetRanjan">GitHub</a>
+          </div>
+          <div>
+            <i class="bi bi-linkedin"></i>
+            <a href="https://www.linkedin.com/in/pritishranjan/">LinkedIn</a>
+          </div>
+          <div>
+            <i class="bi bi-globe"></i>
+            <a href="https://resume.pritishranjan.com"
+              >resume.pritishranjan.com</a
+            >
           </div>
         </div>
       </div>
 
-      <!-- Summary -->
-      <div class="card-footer bg-white">
-        <p class="mb-0">
-          Data Engineer with 4+ years of experience building scalable ETL pipelines
-          using Python, PySpark, SQL, and Apache Spark. Strong expertise in Microsoft
-          Azure including Databricks, Data Factory, Synapse Analytics, and Unity
-          Catalog. Proven in optimizing data workflows and delivering production-grade
-          data platforms.
-        </p>
-      </div>
-    </div>
-
-    <!-- Experience -->
-    <div class="card mt-2">
-      <div class="card-header bg-white">
-        <h4>Professional Experience</h4>
+      <!-- SUMMARY -->
+      <div class="card" data-aos="fade-up">
+        <div class="section-title">Summary</div>
+        Data Engineer with 4+ years of experience building scalable ETL
+        pipelines using Python, PySpark, SQL, and Apache Spark. Strong expertise
+        in Microsoft Azure including Databricks, Data Factory, Synapse
+        Analytics, and Unity Catalog. Proven in optimizing data workflows,
+        enabling analytics, and delivering production-grade data platforms.
       </div>
 
-      <div class="card-body">
-        <div class="d-flex">
-          <div class="flex-grow-1">
-            <h5 class="fw-bold">Mercedes-Benz Research & Development India</h5>
-            <h6>
-              <span class="text-muted">Role:</span>
-              <span class="fw-bold">Data Engineer</span>
-            </h6>
-          </div>
-          <div>Oct 2023 – Present</div>
+      <!-- EXPERIENCE -->
+      <div class="card" data-aos="fade-up">
+        <div class="section-title">Experience</div>
+
+        <div class="job">
+          <h3>Mercedes-Benz R&D India — Data Engineer</h3>
+          <span>Oct 2023 – Present</span>
         </div>
-
         <ul>
-          <li>Built scalable ETL pipelines for high-volume automotive sensor and ECU calibration data.</li>
-          <li>Engineered curated datasets for compliance, diagnostics, and performance analytics.</li>
-          <li>Enabled Power BI dashboards for anomaly detection and regulatory reporting.</li>
-          <li>Developed a PyTest-based Databricks framework used by 5+ teams, improving test coverage by 40%.</li>
-          <li>Built an ASP.NET 9 Web API and Vue.js application for emission data visualization (2x faster).</li>
-          <li>Contributed to AI use cases including Text-to-SQL using LLMs and D3.js graph visualizations.</li>
+          <li>
+            Built scalable ETL pipelines for high-volume automotive sensor and
+            ECU calibration data.
+          </li>
+          <li>
+            Enabled compliance, diagnostics, and performance analytics using
+            curated datasets.
+          </li>
+          <li>Developed PyTest-based Databricks framework used by 5+ teams.</li>
+          <li>
+            Improved test coverage by 40% and reduced production defects by 30%.
+          </li>
+          <li>
+            Built ASP.NET 9 + Vue.js application for emission data visualization
+            (2× faster).
+          </li>
+          <li>
+            Worked on AI use cases including Text-to-SQL (Mistral 7B) and D3.js
+            graph analytics.
+          </li>
+        </ul>
+
+        <div class="job" style="margin-top: 20px">
+          <h3>Tata Consultancy Services — Data Engineer</h3>
+          <span>Apr 2021 – Oct 2023</span>
+        </div>
+        <ul>
+          <li>
+            Designed batch and streaming pipelines using Databricks, ADF, Kafka,
+            and APIs.
+          </li>
+          <li>
+            Built curated and conform layers for marketing and campaign
+            analytics.
+          </li>
+          <li>Integrated Salesforce and Swerve platforms.</li>
+          <li>
+            Developed geospatial drive-time pipelines using Azure Maps API and
+            Turf.js.
+          </li>
         </ul>
       </div>
 
-      <div class="card-body">
-        <div class="d-flex">
-          <div class="flex-grow-1">
-            <h5 class="fw-bold">Tata Consultancy Services (TCS)</h5>
-            <h6>
-              <span class="text-muted">Role:</span>
-              <span class="fw-bold">Data Engineer</span>
-            </h6>
-          </div>
-          <div>Apr 2021 – Oct 2023</div>
-        </div>
+      <!-- SKILLS -->
+      <div class="card skills" data-aos="fade-up">
+        <div class="section-title">Skills</div>
+        <span>Python</span><span>SQL</span><span>PySpark</span
+        ><span>Apache Spark</span> <span>Azure Databricks</span><span>ADF</span
+        ><span>Synapse</span> <span>Kafka</span><span>ETL</span
+        ><span>Data Modeling</span> <span>C#</span><span>ASP.NET 9</span
+        ><span>Vue.js</span> <span>Power BI</span><span>D3.js</span
+        ><span>PyTest</span>
+      </div>
 
-        <ul>
-          <li>Built batch and real-time Azure data pipelines using Databricks, Data Factory, Kafka, and APIs.</li>
-          <li>Designed curated and conform data layers supporting marketing and campaign analytics.</li>
-          <li>Integrated Salesforce and Swerve platforms for audience targeting workflows.</li>
-          <li>Developed geospatial drive-time pipelines using Azure Maps API and Turf.js.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Skills -->
-    <div class="card mt-2">
-      <div class="card-header bg-white">
-        <h4>Skills</h4>
-      </div>
-      <div class="card-body">
-        <p>
-          <strong>Languages & Data:</strong> Python, SQL, Spark SQL, PySpark, Apache Spark, Hive<br />
-          <strong>Azure:</strong> Databricks, Data Factory, Synapse Analytics, Unity Catalog, App Service<br />
-          <strong>Data Engineering:</strong> ETL Pipelines, Data Modeling, Kafka, Batch & Streaming<br />
-          <strong>Backend & Web:</strong> C#, ASP.NET 9, FastAPI, JavaScript, Vue.js<br />
-          <strong>Visualization & Testing:</strong> Power BI, D3.js, PyTest
-        </p>
-      </div>
-    </div>
-
-    <!-- Projects -->
-    <div class="card mt-2" id="projects">
-      <div class="card-header bg-white">
-        <h4>Open Source Projects</h4>
-      </div>
-      <div class="card-body">
-        <h5 class="fw-bold">
-          <a href="https://github.com/PreetRanjan/pyspark-schema-generator" target="_blank">
+      <!-- PROJECT -->
+      <div class="card" data-aos="fade-up">
+        <div class="section-title">Open Source</div>
+        <strong>
+          <a href="https://github.com/PreetRanjan/pyspark-schema-generator">
             PySpark Schema Generator
           </a>
-        </h5>
-        <p class="text-muted">
-          Automates PySpark schema generation for ETL pipelines, improving development speed by ~25%.
+        </strong>
+        <p style="color: var(--muted)">
+          Automates PySpark schema generation for ETL pipelines, improving
+          development speed by ~25%.
         </p>
       </div>
-    </div>
 
-    <!-- Certifications -->
-    <div class="card mt-2">
-      <div class="card-header bg-white">
-        <h4>Certifications</h4>
-      </div>
-      <div class="card-body">
+      <!-- CERTS -->
+      <div class="card" data-aos="fade-up">
+        <div class="section-title">Certifications</div>
         <ul>
-          <li>DP-203 – Azure Data Engineer Associate</li>
-          <li>AZ-204 – Azure Developer Associate</li>
-          <li>DP-900 – Azure Data Fundamentals</li>
-          <li>AZ-900 – Azure Fundamentals</li>
+          <li>DP-203 — Azure Data Engineer Associate</li>
+          <li>AZ-204 — Azure Developer Associate</li>
+          <li>DP-900 — Azure Data Fundamentals</li>
+          <li>AZ-900 — Azure Fundamentals</li>
         </ul>
       </div>
-    </div>
 
-    <!-- Education -->
-    <div class="card mt-2 mb-3">
-      <div class="card-header bg-white">
-        <h4>Education</h4>
-      </div>
-      <div class="card-body">
-        <strong>M.Sc. Electronics</strong> – Sambalpur University<br />
+      <!-- EDUCATION -->
+      <div class="card" data-aos="fade-up">
+        <div class="section-title">Education</div>
+        <strong>M.Sc. Electronics</strong> — Sambalpur University<br />
         CGPA: 8.3 (2017 – 2019)
       </div>
+
+      <footer>
+        Designed & coded by Pritish Ranjan Barik • Heavy-Coder Edition
+      </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+    </script>
   </body>
 </html>
