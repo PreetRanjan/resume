@@ -458,9 +458,7 @@
             </span>
             <span class="tile-eyebrow">Profile</span>
             <strong class="tile-title">About Me</strong>
-            <span class="tile-caption"
-              >4+ years in production data engineering</span
-            >
+            <span class="tile-caption" id="experience-caption"></span>
           </button>
 
           <button
@@ -842,6 +840,20 @@
     <script>
       const tiles = document.querySelectorAll(".tile[data-target]");
       const panels = document.querySelectorAll(".detail-card");
+      const experienceCaption = document.getElementById("experience-caption");
+
+      function formatExperience(startYear, startMonthIndex) {
+        const now = new Date();
+        const totalMonths =
+          (now.getFullYear() - startYear) * 12 +
+          (now.getMonth() - startMonthIndex);
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+        const yearLabel = years === 1 ? "Year" : "Years";
+        const monthLabel = months === 1 ? "Month" : "Months";
+
+        return `${years} ${yearLabel} ${months} ${monthLabel} in production data engineering`;
+      }
 
       function syncPanelTheme(panel, tile) {
         const tileStyle = window.getComputedStyle(tile);
@@ -882,6 +894,10 @@
       tiles.forEach((tile) => {
         tile.addEventListener("click", () => activateTile(tile.dataset.target));
       });
+
+      if (experienceCaption) {
+        experienceCaption.textContent = formatExperience(2021, 3);
+      }
 
       activateTile("profile");
     </script>
