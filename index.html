@@ -401,7 +401,7 @@
 
         .tile-stage {
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          grid-auto-rows: 138px;
+          grid-auto-rows: minmax(156px, auto);
           gap: 10px;
         }
 
@@ -412,14 +412,32 @@
           grid-row: span 1;
         }
 
+        .tile {
+          min-height: 156px;
+          padding: 14px;
+          justify-content: flex-start;
+          gap: 10px;
+        }
+
+        .tile-icon {
+          width: 36px;
+          height: 36px;
+        }
+
         .tile-large .tile-title {
           font-size: 1.8rem;
           font-weight: 600;
         }
 
+        .tile-title {
+          font-size: 1.35rem;
+          line-height: 1.05;
+        }
+
         .tile-caption {
           max-width: 100%;
           font-size: 0.88rem;
+          line-height: 1.3;
         }
 
         .detail-card {
@@ -840,7 +858,9 @@
     <script>
       const tiles = document.querySelectorAll(".tile[data-target]");
       const panels = document.querySelectorAll(".detail-card");
+      const detailPane = document.querySelector(".detail-pane");
       const experienceCaption = document.getElementById("experience-caption");
+      const stackedLayoutMedia = window.matchMedia("(max-width: 1160px)");
 
       function formatExperience(startYear, startMonthIndex) {
         const now = new Date();
@@ -867,8 +887,10 @@
         panel.classList.toggle("detail-card-light", isLightTile);
       }
 
-      function activateTile(target) {
+      function activateTile(target, options = {}) {
+        const { scrollToPanel = false } = options;
         let activeTile = null;
+        let activePanel = null;
 
         tiles.forEach((tile) => {
           const isActive = tile.dataset.target === target;
@@ -886,13 +908,27 @@
           panel.hidden = !isActive;
 
           if (isActive && activeTile) {
+            activePanel = panel;
             syncPanelTheme(panel, activeTile);
           }
         });
+
+        if (
+          scrollToPanel &&
+          stackedLayoutMedia.matches &&
+          activePanel &&
+          detailPane
+        ) {
+          requestAnimationFrame(() => {
+            detailPane.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
       }
 
       tiles.forEach((tile) => {
-        tile.addEventListener("click", () => activateTile(tile.dataset.target));
+        tile.addEventListener("click", () =>
+          activateTile(tile.dataset.target, { scrollToPanel: true }),
+        );
       });
 
       if (experienceCaption) {
