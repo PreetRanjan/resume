@@ -311,6 +311,23 @@
         width: fit-content;
       }
 
+      .skill-group + .skill-group {
+        margin-top: 16px;
+      }
+
+      .skill-group h3 {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .detail-card-light .skill-group h3 {
+        color: rgba(36, 23, 0, 0.7);
+      }
+
       .skill-grid {
         display: flex;
         flex-wrap: wrap;
@@ -666,21 +683,22 @@
               alt="Portrait of Pritish Ranjan Barik"
             />
             <p class="detail-lead">
-              Data Engineer focused on scalable ETL, Azure platforms, and
-              production analytics.
+              Data Engineer with 5+ years designing ETL/ELT pipelines,
+              analytics-ready data products, and governed lakehouse platforms on
+              Azure.
             </p>
             <ul class="detail-list compact-list">
               <li>
-                4+ years building data pipelines with Python, PySpark, SQL, and
-                Apache Spark.
+                Builds with PySpark, Python, SQL, Databricks, Data Factory,
+                Synapse, Delta Lake, Kafka, and REST APIs.
               </li>
               <li>
-                Strong hands-on experience with Azure Databricks, Data Factory,
-                Synapse Analytics, and Unity Catalog.
+                Led a team of 5 engineers delivering AI and data engineering use
+                cases at Mercedes-Benz.
               </li>
               <li>
-                Delivers curated data products for compliance, diagnostics,
-                analytics, and business reporting.
+                Strong focus on data quality, observability, CI/CD, and
+                performance tuning.
               </li>
             </ul>
           </article>
@@ -716,21 +734,22 @@
             <p class="detail-kicker">Overview</p>
             <h2>Summary</h2>
             <p class="detail-lead">
-              Azure-first data engineer with a strong delivery track record
-              across ETL, testing, and analytics enablement.
+              Azure-first data engineer building scalable ETL/ELT pipelines and
+              governed lakehouse platforms with PySpark, Databricks, and Delta
+              Lake.
             </p>
             <ul class="detail-list compact-list">
               <li>
-                Builds resilient data workflows for large-scale processing and
-                downstream reporting.
+                Curates high-volume structured and semi-structured data into
+                Medallion lakehouse layers for analytics and reporting.
               </li>
               <li>
-                Balances engineering speed with data quality, coverage, and
-                maintainability.
+                Drives data quality, observability, CI/CD, and Spark performance
+                tuning across delivery teams.
               </li>
               <li>
-                Comfortable across backend services, data tooling, and
-                visualization-oriented applications.
+                Extends into AI and applications with Agentic AI, LangGraph,
+                FastAPI, ASP.NET Web API, and Vue.js.
               </li>
             </ul>
           </article>
@@ -738,31 +757,37 @@
           <article class="detail-card" id="panel-mercedes" hidden>
             <p class="detail-kicker">Current Role</p>
             <h2>Mercedes-Benz R&amp;D India</h2>
-            <p class="detail-meta">Data Engineer | Oct 2023 - Present</p>
+            <p class="detail-meta">
+              Consultant &ndash; Data Engineer | Oct 2023 - Present
+            </p>
             <ul class="detail-list">
               <li>
-                Built scalable ETL pipelines for high-volume automotive sensor
-                and ECU calibration data.
+                Led a team of 5 engineers delivering AI and data engineering use
+                cases, enforcing engineering standards and CI/CD practices for
+                on-time delivery.
               </li>
               <li>
-                Enabled compliance, diagnostics, and performance analytics using
-                curated datasets.
+                Designed scalable ETL workflows in Azure Databricks, orchestrated
+                with Azure Data Factory, turning high-volume automotive sensor
+                and ECU calibration data into analytics-ready datasets.
               </li>
               <li>
-                Developed a PyTest-based Databricks framework adopted by 5+
-                teams.
+                Engineered PySpark pipelines to cleanse and curate data into
+                Delta Lake tables in a Medallion lakehouse, with clear data
+                contracts and Spark performance tuning.
               </li>
               <li>
-                Improved test coverage by 40% and reduced production defects by
-                30%.
+                Built a PyTest-based Databricks validation framework adopted by
+                5+ teams, increasing test coverage by 40% and reducing production
+                defects by 30%.
               </li>
               <li>
-                Built an ASP.NET 9 and Vue.js application for faster emission
-                data visualization.
+                Built an ASP.NET Web API and Vue.js application to visualize
+                emissions-relevant data, improving analysis speed by 2x.
               </li>
               <li>
-                Worked on AI use cases including Text-to-SQL with Mistral 7B and
-                D3.js graph analytics.
+                Collaborated with cross-functional teams and enabled monitoring
+                and observability through Azure Log Analytics dashboards.
               </li>
             </ul>
           </article>
@@ -794,24 +819,64 @@
           <article class="detail-card" id="panel-skills" hidden>
             <p class="detail-kicker">Toolbox</p>
             <h2>Skills</h2>
-            <div class="skill-grid">
-              <span>Python</span>
-              <span>SQL</span>
-              <span>PySpark</span>
-              <span>Apache Spark</span>
-              <span>Azure</span>
-              <span>Databricks</span>
-              <span>ADF</span>
-              <span>Synapse</span>
-              <span>Kafka</span>
-              <span>ETL</span>
-              <span>Data Modeling</span>
-              <span>C#</span>
-              <span>ASP.NET 9</span>
-              <span>Vue.js</span>
-              <span>Power BI</span>
-              <span>D3.js</span>
-              <span>PyTest</span>
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <div class="skill-grid">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>C#</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Data Engineering</h3>
+              <div class="skill-grid">
+                <span>PySpark</span>
+                <span>Apache Spark</span>
+                <span>Apache Kafka</span>
+                <span>ETL/ELT</span>
+                <span>Delta Lake</span>
+                <span>Lakehouse &amp; Medallion</span>
+                <span>Data Modelling</span>
+                <span>Hive</span>
+                <span>Data Quality &amp; Governance</span>
+                <span>Scala</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Azure</h3>
+              <div class="skill-grid">
+                <span>Azure Databricks</span>
+                <span>Azure Data Factory</span>
+                <span>Azure Synapse Analytics</span>
+                <span>Unity Catalog</span>
+                <span>Azure App Service</span>
+                <span>Azure Log Analytics</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>DevOps &amp; Testing</h3>
+              <div class="skill-grid">
+                <span>Azure DevOps</span>
+                <span>GitHub</span>
+                <span>CI/CD</span>
+                <span>PyTest</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>AI &amp; Applications</h3>
+              <div class="skill-grid">
+                <span>Agentic AI</span>
+                <span>LangGraph</span>
+                <span>Databricks Genie</span>
+                <span>MCP</span>
+                <span>FastAPI</span>
+                <span>ASP.NET Web API</span>
+                <span>REST APIs</span>
+                <span>React JS</span>
+                <span>Vue.js</span>
+                <span>Data Visualization</span>
+              </div>
             </div>
           </article>
 
